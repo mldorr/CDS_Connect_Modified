@@ -1,6 +1,16 @@
 # Pain Management Summary SMART on FHIR Application
 
-## About
+## About - Part 1  
+
+This was forked from the AHRQ CDS Connect Chronic Pain Management app. I successfully changed the inclusion/exclusion criteria, but broke it when I was trying to add in Opioid Overdoses as another risk factor. The r4 version still works because I didn't modify that *yet*, but DSTU2 gets an error. Pushing so I can get help.  
+
+The files I modified were:  
+* src/components/summary.json (~line 63)  
+* src/cql/dstu2/Factors... (~lines 80, 1894, 2192, 2319, 2641)  
+* src/cql/valueset-db.json (~line 36436) (it's not likely to be this one because r4 still works)  
+
+
+## About - Part 2
 
 The Pain Management Summary SMART on FHIR application was developed to support the pilot of the CDS artifact, [Factors to Consider in Managing Chronic Pain: A Pain Management Summary](https://cds.ahrq.gov/cdsconnect/artifact/factors-consider-managing-chronic-pain-pain-management-summary).  This artifact presents a variety of key "factors" for clinicians to consider when assessing the history of a patient's chronic pain.  These factors include subjective and objective findings, along with recorded treatments and interventions to inform shared decision making on treatments moving forward.
 

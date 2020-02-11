@@ -81,6 +81,11 @@
             "id" : "2.16.840.1.113883.3.464.1003.106.12.1004",
             "accessLevel" : "Public"
          }, {
+            "name" : "Opioid overdose and poisoning",
+            "id" : "2.16.840.1.113762.1.4.1146.1008",
+            "accessLevel" : "Public"
+         },
+         {
             "name" : "Suicide attempt",
             "id" : "2.16.840.1.113762.1.4.1032.40",
             "accessLevel" : "Public"
@@ -1755,22 +1760,7 @@
                "operand" : [ {
                   "name" : "Is18orOlder",
                   "type" : "ExpressionRef"
-               }, {
-                  "type" : "Or",
-                  "operand" : [ {
-                     "type" : "Or",
-                     "operand" : [ {
-                        "name" : "HasConditionAssociatedWithChronicPain",
-                        "type" : "ExpressionRef"
-                     }, {
-                        "name" : "HasRecentOpioidPainMedication",
-                        "type" : "ExpressionRef"
-                     } ]
-                  }, {
-                     "name" : "HasRecentAdjuvantAnalgesicMedication",
-                     "type" : "ExpressionRef"
-                  } ]
-               } ]
+               }]
             }
          }, {
             "name" : "ReportConditionsAssociatedWithChronicPain",
@@ -1914,6 +1904,24 @@
                   "type" : "Retrieve",
                   "codes" : {
                      "name" : "Substance use disorder",
+                     "type" : "ValueSetRef"
+                  }
+               } ]
+            }
+         }, {
+            "name" : "OpioidOverdoseAndPoisoningConditions",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Confirmed",
+               "libraryName" : "C3F",
+               "type" : "FunctionalRef",
+               "operand" : [ {
+                  "dataType" : "{http://hl7.org/fhir}Condition",
+                  "codeProperty" : "code",
+                  "type" : "Retrieve",
+                  "codes" : {
+                     "name" : "Opioid overdose and poisoning",
                      "type" : "ValueSetRef"
                   }
                } ]
@@ -2181,14 +2189,20 @@
                               "operand" : [ {
                                  "type" : "Union",
                                  "operand" : [ {
-                                    "name" : "DepressionConditions",
-                                    "type" : "ExpressionRef"
+                                    "type" : "Union",
+                                    "operand" : [ {
+                                       "name" : "DepressionConditions",
+                                       "type" : "ExpressionRef"
+                                    }, {
+                                       "name" : "AnxietyConditions",
+                                       "type" : "ExpressionRef"
+                                    } ]
                                  }, {
-                                    "name" : "AnxietyConditions",
+                                    "name" : "SubstanceUseDisorderConditions",
                                     "type" : "ExpressionRef"
                                  } ]
                               }, {
-                                 "name" : "SubstanceUseDisorderConditions",
+                                 "name" : "OpioidOverdoseAndPoisoningConditions",
                                  "type" : "ExpressionRef"
                               } ]
                            }, {
@@ -2254,6 +2268,8 @@
                                        "operand" : [ {
                                           "type" : "Or",
                                           "operand" : [ {
+                                          "type" : "Or",
+                                          "operand" : [ {
                                              "type" : "Or",
                                              "operand" : [ {
                                                 "type" : "InValueSet",
@@ -2300,6 +2316,21 @@
                                              }
                                           } ]
                                        }, {
+                                          "type" : "InValueSet",
+                                          "code" : {
+                                             "name" : "NullSafeToConcept",
+                                             "libraryName" : "C3F",
+                                             "type" : "FunctionRef",
+                                             "operand" : [ {
+                                                "name" : "R",
+                                                "type" : "AliasRef"
+                                             } ]
+                                          },
+                                          "valueset" : {
+                                             "name" : "Opioid overdose and poisoning"
+                                          }
+                                       } ]
+                                    }, {
                                           "type" : "InValueSet",
                                           "code" : {
                                              "name" : "NullSafeToConcept",
@@ -2561,19 +2592,36 @@
                                     "operand" : [ {
                                        "type" : "Or",
                                        "operand" : [ {
-                                          "type" : "InValueSet",
-                                          "code" : {
-                                             "name" : "NullSafeToConcept",
-                                             "libraryName" : "C3F",
-                                             "type" : "FunctionRef",
-                                             "operand" : [ {
-                                                "name" : "R",
-                                                "type" : "AliasRef"
-                                             } ]
-                                          },
-                                          "valueset" : {
-                                             "name" : "Major Depression"
-                                          }
+                                          "type" : "Or",
+                                          "operand" : [ {
+                                             "type" : "InValueSet",
+                                             "code" : {
+                                                "name" : "NullSafeToConcept",
+                                                "libraryName" : "C3F",
+                                                "type" : "FunctionRef",
+                                                "operand" : [ {
+                                                   "name" : "R",
+                                                   "type" : "AliasRef"
+                                                } ]
+                                             },
+                                             "valueset" : {
+                                                "name" : "Major Depression"
+                                             }
+                                          }, {
+                                             "type" : "InValueSet",
+                                             "code" : {
+                                                "name" : "NullSafeToConcept",
+                                                "libraryName" : "C3F",
+                                                "type" : "FunctionRef",
+                                                "operand" : [ {
+                                                   "name" : "R",
+                                                   "type" : "AliasRef"
+                                                } ]
+                                             },
+                                             "valueset" : {
+                                                "name" : "Anxiety"
+                                             }
+                                          } ]
                                        }, {
                                           "type" : "InValueSet",
                                           "code" : {
@@ -2586,7 +2634,7 @@
                                              } ]
                                           },
                                           "valueset" : {
-                                             "name" : "Anxiety"
+                                             "name" : "Substance use disorder"
                                           }
                                        } ]
                                     }, {
@@ -2601,10 +2649,10 @@
                                           } ]
                                        },
                                        "valueset" : {
-                                          "name" : "Substance use disorder"
+                                          "name" : "Opioid overdose and poisoning"
                                        }
                                     } ]
-                                 }, {
+                              }, {
                                     "type" : "InValueSet",
                                     "code" : {
                                        "name" : "NullSafeToConcept",

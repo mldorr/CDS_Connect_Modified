@@ -36433,6 +36433,150 @@
       }
     ]
   },
+  "2.16.840.1.113762.1.4.1146.1008": {
+    "20191227": [
+      {
+      "code": "T40.0X1A",
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2020"
+      },
+      {
+        "code": "T40.0X2A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.0X3A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.0X4A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.1X1A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.1X2A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.1X3A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.1X4A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.2X1A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.2X2A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.2X3A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.2X4A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.3X1A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.3X2A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.3X3A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.3X4A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.4X1A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.4X2A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.4X3A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.4X4A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.601A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.602A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.603A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.604A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.691A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.692A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.693A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      },
+      {
+        "code": "T40.694A",
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2020"
+      }
+    ]
+  },
   "2.16.840.1.113883.3.464.1003.109.12.1028": {
     "20180326": [
       {
